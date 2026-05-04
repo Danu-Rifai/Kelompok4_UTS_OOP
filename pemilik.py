@@ -22,3 +22,4 @@ class Pemilik:
         else:
             print("  Hewan      : (belum ada)")
         print("=" * 35)
+        

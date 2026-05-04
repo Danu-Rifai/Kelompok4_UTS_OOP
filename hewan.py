@@ -16,3 +16,4 @@ class Hewan:
         print(f"  Kondisi    : {self.kondisi}")
         print(f"  Pemilik    : {self.pemilik.nama}")
         print("=" * 35)
+        
