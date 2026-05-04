@@ -1,0 +1,14 @@
+# Mengabaikan folder hasil kompilasi Python
+__pycache__/
+*.pyc
+
+# Mengabaikan virtual environment
+venv/
+env/
+
+# Mengabaikan file konfigurasi lokal/rahasia (seperti API Key)
+.env
+
+# Mengabaikan folder IDE
+.vscode/
+.idea/
