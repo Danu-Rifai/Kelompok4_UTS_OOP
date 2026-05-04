@@ -1,4 +1,4 @@
-class Pemilik(Id, nama, kontak, hewan_peliharaan=[]):
+class Pemilik:
     def __init__(self, id, nama, kontak):
         self.id = id
         self.nama = nama
