@@ -9,9 +9,9 @@ class Ruangan:
         """Masukkan hewan ke ruangan jika masih ada kapasitas."""
         if len(self.hewan_dirawat) < self.kapasitas_ruang:
             self.hewan_dirawat.append(hewan)
-            print(f"  ✔  {hewan.nama} berhasil masuk ke {self.nama_ruang}.")
+            print(f"{hewan.nama} berhasil masuk ke {self.nama_ruang}.")
         else:
-            print(f"  ✘  Ruangan '{self.nama_ruang}' penuh! Kapasitas: {self.kapasitas_ruang}.")
+            print(f"Ruangan '{self.nama_ruang}' penuh! Kapasitas: {self.kapasitas_ruang}.")
 
     def cek_kapasitas(self):
         print("=" * 35)

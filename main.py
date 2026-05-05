@@ -26,7 +26,7 @@ daftar_ruangan["R01"].tambah_hewan(daftar_hewan["H001"])
 daftar_ruangan["R02"].tambah_hewan(daftar_hewan["H002"])
 daftar_ruangan["R03"].tambah_hewan(daftar_hewan["H003"])
 
-TARIF_RAWAT_INAP_PER_HARI = 200_000
+TARIF_RAWAT_INAP_PER_HARI = 200.000
 
 class Sistem:
 
@@ -99,14 +99,14 @@ def cari_atau_buat_pemilik(nama_input: str, kontak_input: str):
     for pemilik in daftar_pemilik.values():
         if (pemilik.nama.strip().lower() == nama_input.strip().lower()
                 and pemilik.kontak.strip() == kontak_input.strip()):
-            print(f"  v  Pemilik sudah terdaftar -> menggunakan data [{pemilik.id}] {pemilik.nama}.")
+            print(f"Pemilik sudah terdaftar -> menggunakan data [{pemilik.id}] {pemilik.nama}.")
             return pemilik
 
     # Tidak ditemukan -> buat baru
     id_baru = generate_id_pemilik()
     p_baru  = Pemilik(id_baru, nama_input.strip(), kontak_input.strip())
     daftar_pemilik[id_baru] = p_baru
-    print(f"  v  Pemilik baru dibuat -> [{id_baru}] {p_baru.nama}.")
+    print(f"Pemilik baru dibuat -> [{id_baru}] {p_baru.nama}.")
     return p_baru
 
 def tambah_hewan_baru():
@@ -120,9 +120,9 @@ def tambah_hewan_baru():
             umur_hewan = int(input("  Umur (tahun)  : "))
             if umur_hewan >= 0:
                 break
-            print("  x Umur tidak boleh negatif.")
+            print("Umur tidak boleh negatif.")
         except ValueError:
-            print("  x Masukan harus berupa angka.")
+            print("Masukan harus berupa angka.")
     kondisi_hewan = input("  Kondisi hewan : ").strip()
 
     # Data pemilik
@@ -139,7 +139,7 @@ def tambah_hewan_baru():
     daftar_hewan[id_hewan] = hewan_baru
     pemilik.tambah_hewan(hewan_baru)
 
-    print(f"\n  v  Hewan [{id_hewan}] '{nama_hewan}' berhasil didaftarkan!")
+    print(f"\nHewan [{id_hewan}] '{nama_hewan}' berhasil didaftarkan!")
     print(f"     Pemilik : {pemilik.nama} [{pemilik.id}]")
 
 def pilih_dari_daftar(daftar: dict, label: str):
@@ -156,9 +156,9 @@ def pilih_dari_daftar(daftar: dict, label: str):
             pilihan = int(input(f"  Pilih nomor {label}: "))
             if 1 <= pilihan <= len(kunci_list):
                 return daftar[kunci_list[pilihan - 1]]
-            print("  ✘ Nomor tidak valid, coba lagi.")
+            print("Nomor tidak valid, coba lagi.")
         except ValueError:
-            print("  ✘ Masukan harus berupa angka.")
+            print("Masukan harus berupa angka.")
 
 
 def main():
@@ -215,7 +215,7 @@ def main():
                 jenis = input("  Pilih jenis perawatan (1/2): ").strip()
                 if jenis in ("1", "2"):
                     break
-                print("  ✘ Masukkan 1 atau 2.")
+                print("Masukkan 1 atau 2.")
 
             if jenis == "1":
                 sesi = Sistem(dokter, hewan, pemilik, rawat_inap=False)
@@ -226,9 +226,9 @@ def main():
                         lama = int(input("  Lama dirawat (hari): "))
                         if lama > 0:
                             break
-                        print("  ✘ Lama rawat harus lebih dari 0.")
+                        print("Lama rawat harus lebih dari 0.")
                     except ValueError:
-                        print("  ✘ Masukan harus berupa angka.")
+                        print("Masukan harus berupa angka.")
                 sesi = Sistem(dokter, hewan, pemilik,
                               rawat_inap=True, ruangan=ruangan, lama_dirawat=lama)
 
@@ -243,7 +243,7 @@ def main():
             break
 
         else:
-            print("  ✘ Pilihan tidak dikenal, silakan coba lagi.")
+            print("Pilihan tidak dikenal, silakan coba lagi.")
 
 
 if __name__ == "__main__":
